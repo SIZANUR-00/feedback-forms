@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Forms - BAUET</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fc;
+        }
+        .header {
+            background: rgb(0, 32, 84);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .card p {
+            color: #7f8c8d;
+        }
+        .btn {
+            display: inline-block;
+            background: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background: #1f6692;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Bangladesh Army University of Engineering & Technology</h1>
+        <p>Feedback Forms System</p>
+    </div>
+    
+    <div class="container">
+        <div class="card-container">
+            <div class="card">
+                <h2>Employer Feedback</h2>
+                <p>Form for employers to provide feedback about BAUET graduates</p>
+                <a href="Employee.html" class="btn">Go to Form</a>
+            </div>
+            
+            <div class="card">
+                <h2>Faculty Peer Review</h2>
+                <p>Form for faculty members to review their peers</p>
+                <a href="fac_to_fac_feedback.html" class="btn">Go to Form</a>
+            </div>
+            
+            <div class="card">
+                <h2>Student Peer Review</h2>
+                <p>Form for students to provide peer feedback</p>
+                <a href="peer_feedback.html" class="btn">Go to Form</a>
+            </div>
+            
+            <div class="card">
+                <h2>Teacher Course Feedback</h2>
+                <p>Form for teachers to provide course feedback</p>
+                <a href="Teacher.html" class="btn">Go to Form</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

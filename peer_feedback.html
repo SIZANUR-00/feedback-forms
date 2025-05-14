@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peer Review - Students</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fc;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: rgb(0, 32, 84);
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .top-header img {
+      width: 40px;
+      margin-right: 10px;
+    }
+    .sidebar {
+      width: 220px;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+    }
+    .sidebar img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar ul li {
+      font-weight: bold;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #34495e;
+      position: relative;
+    }
+    .sidebar ul li ul.submenu {
+      list-style: none;
+      padding-left: 20px;
+      display: none;
+    }
+    .submenu.active {
+      display: block !important;
+    }
+    .sidebar ul li ul.submenu li:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .sidebar ul li.active {
+      background: #1f6692b9;
+      color: white;
+    }
+    .toggle-icon {
+      position: absolute;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s;
+    }
+    .toggle-icon.rotate {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      margin-left: 250px;
+      transition: margin-left 0.3s ease-in-out;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2980b9;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .form-container {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    textarea, input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      background: #2980b9;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .submit-btn:hover {
+      background: #1f6692;
+    }
+    h3 {
+      margin-top: 30px;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+<header class="top-header">
+  <img src="image/bauet-logo2.png" alt="BAUET Logo" />
+  <h1><span>Bangladesh Army University of Engineering & Technology</span></h1>
+</header>
+<div class="sidebar">
+  <img src="image/bauet_logo.png" alt="BAUET Logo" />
+  <ul>
+    <li class="toggle-menu">
+      <i class="fas fa-user"></i> Peer Review (Students)</li>
+    </li>
+  </ul>
+</div>
+<div class="main-content">
+  <div class="top-bar">
+    <h2>Peer Review for Students</h2>
+    <div class="user-info">
+      <img src="user.png" alt="User Profile" />
+      <span>Sizanur</span>
+    </div>
+  </div>
+  <div class="form-container">
+    <form>
+       <h3>Instructions for Reviewers:</h3>
+<ul style="margin-top: -10px; margin-bottom: 20px; line-height: 1.6;">
+  <li>Please provide honest and constructive feedback.</li>
+  <li>Use the comments section to justify your ratings and offer specific examples.</li>
+  <li>Submit the completed form to <strong>[Instructor/Supervisor Name]</strong> by <strong>[Due Date]</strong></li>
+</ul>
+
+      <h3>Student Information</h3>
+      <label>Name: <input type="text" name="studentName" placeholder="Enter your name" required /></label>
+      <label>Group Member Name & ID: <input type="text" name="groupInfo" placeholder="e.g., John Doe - 12345" required /></label>
+      <label>Thesis/Project Title: <input type="text" name="projectTitle" placeholder="Title of your thesis/project" required /></label>
+      <label>Course Code & Title: <input type="text" name="courseCode" placeholder="e.g., CSE-499: Project Work" required /></label>
+
+      <h3>Rating Scale</h3>
+      <p>4 = Excellent &nbsp;&nbsp; 3 = Good &nbsp;&nbsp; 2 = Average &nbsp;&nbsp; 1 = Poor</p>
+
+      <table>
+        <thead>
+          <tr><th>Description</th><th>4 (Excellent)</th><th>3 (Good)</th><th>2 (Average)</th><th>1 (Poor)</th></tr>
+        </thead>
+        <tbody>
+          <!-- Original Criteria -->
+          <tr><td colspan="5" style="background-color:#2980b9 ; color: white;"><strong>Contribution to Group Work</strong></td></tr>
+          <tr><td>Regular Attendance at Group Meetings</td><td><input type="radio" name="attendance" value="4" required></td><td><input type="radio" name="attendance" value="3"></td><td><input type="radio" name="attendance" value="2"></td><td><input type="radio" name="attendance" value="1"></td></tr>
+          <tr><td>Preparedness for Meetings</td><td><input type="radio" name="preparedness" value="4" required></td><td><input type="radio" name="preparedness" value="3"></td><td><input type="radio" name="preparedness" value="2"></td><td><input type="radio" name="preparedness" value="1"></td></tr>
+          <tr><td>Quality of Work Contributed</td><td><input type="radio" name="quality" value="4" required></td><td><input type="radio" name="quality" value="3"></td><td><input type="radio" name="quality" value="2"></td><td><input type="radio" name="quality" value="1"></td></tr>
+          <tr><td>Meeting Deadlines</td><td><input type="radio" name="deadlines" value="4" required></td><td><input type="radio" name="deadlines" value="3"></td><td><input type="radio" name="deadlines" value="2"></td><td><input type="radio" name="deadlines" value="1"></td></tr>
+          <tr><td>Innovation and Problem-Solving</td><td><input type="radio" name="innovation" value="4" required></td><td><input type="radio" name="innovation" value="3"></td><td><input type="radio" name="innovation" value="2"></td><td><input type="radio" name="innovation" value="1"></td></tr>
+
+          <tr><td colspan="5" style="background-color:#2980b9 ; color: white;"><strong>Communication and Collaboration</strong></td></tr>
+          <tr><td>Effective Communication</td><td><input type="radio" name="communication" value="4" required></td><td><input type="radio" name="communication" value="3"></td><td><input type="radio" name="communication" value="2"></td><td><input type="radio" name="communication" value="1"></td></tr>
+          <tr><td>Listening to Others</td><td><input type="radio" name="listening" value="4" required></td><td><input type="radio" name="listening" value="3"></td><td><input type="radio" name="listening" value="2"></td><td><input type="radio" name="listening" value="1"></td></tr>
+          <tr><td>Respect and Professionalism</td><td><input type="radio" name="respect" value="4" required></td><td><input type="radio" name="respect" value="3"></td><td><input type="radio" name="respect" value="2"></td><td><input type="radio" name="respect" value="1"></td></tr>
+          <tr><td>Constructive Feedback</td><td><input type="radio" name="feedback" value="4" required></td><td><input type="radio" name="feedback" value="3"></td><td><input type="radio" name="feedback" value="2"></td><td><input type="radio" name="feedback" value="1"></td></tr>
+          <tr><td>Collaboration and Teamwork</td><td><input type="radio" name="teamwork" value="4" required></td><td><input type="radio" name="teamwork" value="3"></td><td><input type="radio" name="teamwork" value="2"></td><td><input type="radio" name="teamwork" value="1"></td></tr>
+
+          <!-- New Section: Individual Responsibility and Initiative -->
+          <tr><td colspan="5" style="background-color:#2980b9 ; color: white;"><strong>Individual Responsibility and Initiative</strong></td></tr>
+          <tr><td>Taking Initiative</td><td><input type="radio" name="initiative" value="4" required></td><td><input type="radio" name="initiative" value="3"></td><td><input type="radio" name="initiative" value="2"></td><td><input type="radio" name="initiative" value="1"></td></tr>
+          <tr><td>Responsibility in Assigned Tasks</td><td><input type="radio" name="responsibility" value="4" required></td><td><input type="radio" name="responsibility" value="3"></td><td><input type="radio" name="responsibility" value="2"></td><td><input type="radio" name="responsibility" value="1"></td></tr>
+          <tr><td>Proactive Problem Identification</td><td><input type="radio" name="problemSolving" value="4" required></td><td><input type="radio" name="problemSolving" value="3"></td><td><input type="radio" name="problemSolving" value="2"></td><td><input type="radio" name="problemSolving" value="1"></td></tr>
+          <tr><td>Work Ethic and Diligence</td><td><input type="radio" name="ethic" value="4" required></td><td><input type="radio" name="ethic" value="3"></td><td><input type="radio" name="ethic" value="2"></td><td><input type="radio" name="ethic" value="1"></td></tr>
+          <tr><td>Overall Dependability</td><td><input type="radio" name="dependability" value="4" required></td><td><input type="radio" name="dependability" value="3"></td><td><input type="radio" name="dependability" value="2"></td><td><input type="radio" name="dependability" value="1"></td></tr>
+
+          <!-- New Section: Technical Skills and Knowledge -->
+          <tr><td colspan="5" style="background-color:#2980b9 ; color: white;"><strong>Technical Skills and Knowledge</strong></td></tr>
+          <tr><td>Understanding of Thesis Topic</td><td><input type="radio" name="understanding" value="4" required></td><td><input type="radio" name="understanding" value="3"></td><td><input type="radio" name="understanding" value="2"></td><td><input type="radio" name="understanding" value="1"></td></tr>
+          <tr><td>Application of Technical Skills</td><td><input type="radio" name="application" value="4" required></td><td><input type="radio" name="application" value="3"></td><td><input type="radio" name="application" value="2"></td><td><input type="radio" name="application" value="1"></td></tr>
+          <tr><td>Use of Research and Data</td><td><input type="radio" name="research" value="4" required></td><td><input type="radio" name="research" value="3"></td><td><input type="radio" name="research" value="2"></td><td><input type="radio" name="research" value="1"></td></tr>
+          <tr><td>Ability to Integrate Knowledge</td><td><input type="radio" name="integration" value="4" required></td><td><input type="radio" name="integration" value="3"></td><td><input type="radio" name="integration" value="2"></td><td><input type="radio" name="integration" value="1"></td></tr>
+          <tr><td>Contribution to Technical Discussions</td><td><input type="radio" name="technicalContribution" value="4" required></td><td><input type="radio" name="technicalContribution" value="3"></td><td><input type="radio" name="technicalContribution" value="2"></td><td><input type="radio" name="technicalContribution" value="1"></td></tr>
+
+          <tr><td colspan="5" style="background-color:#2980b9 ; color: white;"><strong>Overall Contribution</strong></td></tr>
+          <tr><td>Overall Contribution to the Thesis Project</td><td><input type="radio" name="overallContribution" value="4" required></td><td><input type="radio" name="overallContribution" value="3"></td><td><input type="radio" name="overallContribution" value="2"></td><td><input type="radio" name="overallContribution" value="1"></td></tr>
+          <!-- Final Comments -->
+          
+          <tr><td><b>Strengths: (What did this group member do well?)</b></td><td colspan="4"><textarea name="strengths" rows="3" placeholder="Mention strengths here..." required></textarea></td></tr>
+          <tr><td><b>Areas for Improvement: (What could this group member improve?)</b></td><td colspan="4"><textarea name="improvements" rows="3" placeholder="Mention areas to improve..." required></textarea></td></tr>
+          <tr><td><b>Additional Comments</b></td><td colspan="4"><textarea name="comments" rows="3" placeholder="Any additional notes..."></textarea></td></tr>
+        </tbody>
+      </table>
+
+      <label>Signature: <input type="text" name="signature" placeholder="Type your name as signature" required /></label>
+      <label>Date: <input type="date" name="date" required /></label>
+
+      <button type="submit" class="submit-btn">Submit Review</button>
+     <button type="button" onclick="downloadForm()" class="submit-btn" style="margin-top: 10px; background: #27ae60;">Download Review</button>
+    </form>
+  </div>
+</div>
+
+  <script>
+  function downloadForm() {
+    const form = document.querySelector('form');
+    const formData = new FormData(form);
+    let content = "Peer Review Submission\n\n";
+    for (const [key, value] of formData.entries()) {
+      content += `${key}: ${value}\n`;
+    }
+
+    const blob = new Blob([content], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'peer_review.txt';
+    a.click();
+  }
+</script>
+
+
+</body>
+</html>

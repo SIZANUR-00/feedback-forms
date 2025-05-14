@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peer Review - Faculty</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fc;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: rgb(0, 32, 84);
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .top-header img {
+      width: 40px;
+      margin-right: 10px;
+    }
+    .sidebar {
+      width: 220px;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+    }
+    .sidebar img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sidebar ul li {
+      font-weight: bold;
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #34495e;
+      position: relative;
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      margin-left: 250px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2980b9;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+    .user-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .form-container {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    textarea, input[type="text"], input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .submit-btn {
+      background: #2980b9;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .submit-btn:hover {
+      background: #1f6692;
+    }
+    h3 {
+      margin-top: 30px;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+<header class="top-header">
+    <img src="image/bauet-logo2.png" alt="BAUET Logo" />
+    <h1><span>Bangladesh Army University of Engineering & Technology</span></h1>
+</header>
+<div class="sidebar">
+    <img src="image/bauet_logo.png" alt="BAUET Logo" />
+    <ul>
+    <li><i class="fas fa-chalkboard-teacher"></i> Peer Review (Faculty)</li>
+  </ul>
+</div>
+<div class="main-content">
+  <div class="top-bar">
+    <h2>Peer Review for Faculty Member</h2>
+    <div class="user-info">
+      <img src="user.png" alt="User Profile" />
+      <span>Sizanur</span>
+    </div>
+  </div>
+  <div class="form-container">
+    <form>
+      <h3>Instructions for Reviewers:</h3>
+      <ul style="margin-top: -10px; margin-bottom: 20px; line-height: 1.6;">
+        <li>Please provide honest and constructive feedback.</li>
+        <li>Use the comments section to justify your ratings and offer specific examples.</li>
+        <li>Submit the completed form to <strong>[Head of the Dept/PSAC]</strong> by <strong>[Due Date]</strong></li>
+      </ul>
+
+      <h3>General Information</h3>
+      <label>Reviewer’s Name, Designation & Dept: <input type="text" name="reviewer" required /></label>
+      <label>Reviewee’s Name, Designation & Dept.: <input type="text" name="reviewee" required /></label>
+      <label>Course Code & Title: <input type="text" name="courseCode" required /></label>
+      <label>Date of Review: <input type="date" name="reviewDate" required /></label>
+      <label>Class Observed: <input type="text" name="classObserved" required /></label>
+
+      <h3>Rating Scale</h3>
+      <p>4 = Excellent &nbsp;&nbsp; 3 = Good &nbsp;&nbsp; 2 = Average &nbsp;&nbsp; 1 = Poor</p>
+
+      <table>
+        <thead>
+          <tr><th>Description</th><th>4</th><th>3</th><th>2</th><th>1</th></tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="5" style="background-color:#2980b9;color:white"><strong>Teaching Preparation</strong></td></tr>
+          <tr><td>Course Syllabus</td><td><input type="radio" name="syllabus" value="4" required></td><td><input type="radio" name="syllabus" value="3"></td><td><input type="radio" name="syllabus" value="2"></td><td><input type="radio" name="syllabus" value="1"></td></tr>
+          <tr><td>Lesson Plan</td><td><input type="radio" name="lessonPlan" value="4" required></td><td><input type="radio" name="lessonPlan" value="3"></td><td><input type="radio" name="lessonPlan" value="2"></td><td><input type="radio" name="lessonPlan" value="1"></td></tr>
+
+          <tr><td colspan="5" style="background-color:#2980b9;color:white"><strong>Instructional Delivery</strong></td></tr>
+          <tr><td>Presentation Skills</td><td><input type="radio" name="presentation" value="4" required></td><td><input type="radio" name="presentation" value="3"></td><td><input type="radio" name="presentation" value="2"></td><td><input type="radio" name="presentation" value="1"></td></tr>
+          <tr><td>Content Knowledge</td><td><input type="radio" name="content" value="4" required></td><td><input type="radio" name="content" value="3"></td><td><input type="radio" name="content" value="2"></td><td><input type="radio" name="content" value="1"></td></tr>
+          <tr><td>Teaching Methods</td><td><input type="radio" name="methods" value="4" required></td><td><input type="radio" name="methods" value="3"></td><td><input type="radio" name="methods" value="2"></td><td><input type="radio" name="methods" value="1"></td></tr>
+
+          <tr><td colspan="5" style="background-color:#2980b9;color:white"><strong>Learning Environment</strong></td></tr>
+          <tr><td>Classroom Management</td><td><input type="radio" name="management" value="4" required></td><td><input type="radio" name="management" value="3"></td><td><input type="radio" name="management" value="2"></td><td><input type="radio" name="management" value="1"></td></tr>
+          <tr><td>Student Engagement</td><td><input type="radio" name="engagement" value="4" required></td><td><input type="radio" name="engagement" value="3"></td><td><input type="radio" name="engagement" value="2"></td><td><input type="radio" name="engagement" value="1"></td></tr>
+
+          <tr><td colspan="5" style="background-color:#2980b9;color:white"><strong>Assessment and Feedback</strong></td></tr>
+          <tr><td>Assessment Techniques</td><td><input type="radio" name="assessment" value="4" required></td><td><input type="radio" name="assessment" value="3"></td><td><input type="radio" name="assessment" value="2"></td><td><input type="radio" name="assessment" value="1"></td></tr>
+          <tr><td>Student Feedback</td><td><input type="radio" name="feedback" value="4" required></td><td><input type="radio" name="feedback" value="3"></td><td><input type="radio" name="feedback" value="2"></td><td><input type="radio" name="feedback" value="1"></td></tr>
+
+          <tr><td colspan="5" style="background-color:#2980b9;color:white"><strong>Professionalism</strong></td></tr>
+          <tr><td>Professional Conduct</td><td><input type="radio" name="conduct" value="4" required></td><td><input type="radio" name="conduct" value="3"></td><td><input type="radio" name="conduct" value="2"></td><td><input type="radio" name="conduct" value="1"></td></tr>
+          <tr><td>Continuous Improvement</td><td><input type="radio" name="improvement" value="4" required></td><td><input type="radio" name="improvement" value="3"></td><td><input type="radio" name="improvement" value="2"></td><td><input type="radio" name="improvement" value="1"></td></tr>
+
+          <tr><td colspan="5" style="background-color:#2980b9;color:white"><strong>Overall Effectiveness</strong></td></tr>
+          <tr><td>Overall Rating</td><td><input type="radio" name="overall" value="4" required></td><td><input type="radio" name="overall" value="3"></td><td><input type="radio" name="overall" value="2"></td><td><input type="radio" name="overall" value="1"></td></tr>
+
+          <tr><td><b>Strengths</b></td><td colspan="4"><textarea name="strengths" rows="3" required></textarea></td></tr>
+          <tr><td><b>Areas for Improvement</b></td><td colspan="4"><textarea name="improvements" rows="3" required></textarea></td></tr>
+          <tr><td><b>Additional Comments</b></td><td colspan="4"><textarea name="comments" rows="3"></textarea></td></tr>
+        </tbody>
+      </table>
+
+      <label>Signature: <input type="text" name="signature" required /></label>
+      <label>Date: <input type="date" name="date" required /></label>
+
+      <button type="submit" class="submit-btn">Submit Review</button>
+      <button type="button" onclick="downloadForm()" class="submit-btn" style="margin-top: 10px; background: #27ae60;">Download Review</button>
+    </form>
+  </div>
+</div>
+<script>
+  function downloadForm() {
+    const form = document.querySelector('form');
+    const formData = new FormData(form);
+    let content = "Peer Review Submission\n\n";
+    for (const [key, value] of formData.entries()) {
+      content += `${key}: ${value}\n`;
+    }
+
+    const blob = new Blob([content], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'PRFaculty.txt';
+    a.click();
+  }
+</script>
+</body>
+</html>
